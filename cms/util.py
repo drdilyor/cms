@@ -136,9 +136,13 @@ def get_safe_shard(service, provided_shard):
     raise (ValueError): if no safe shard can be returned.
 
     """
+    print(f"{provided_shard=}");
+    print(f"{async_config.core_services=}");
     if provided_shard is None:
         addrs = _find_local_addresses()
         computed_shard = _get_shard_from_addresses(service, addrs)
+        print(f"{addrs=}");
+        print(f"{computed_shard=}");
         if computed_shard is None:
             logger.critical("Couldn't autodetect shard number and "
                             "no shard specified for service %s, "
@@ -148,6 +152,7 @@ def get_safe_shard(service, provided_shard):
             return computed_shard
     else:
         coord = ServiceCoord(service, provided_shard)
+        print(f"{coord=}");
         if coord not in async_config.core_services:
             logger.critical("The provided shard number for service %s "
                             "cannot be found in the configuration, "
