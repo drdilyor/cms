@@ -10,9 +10,7 @@ git push
 
 for ip in ${vms[@]}; do
     echo root@$ip
-    ssh root@$ip '
-        su cmsuser &&
-        cd ~/cms &&
-        ./update.sh
-    '
+    ssh root@$ip << END_SSH
+        su cmsuser && cd ~/cms && ./update.sh && exit
+END_SSH
 done
