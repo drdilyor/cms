@@ -33,7 +33,8 @@ password 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
 END
 chmod 700 .netrc
 
-git clone https://github.com/drdilyor/cms || exit 1
+git clone --recursive https://github.com/drdilyor/cms || exit 1
 cd cms
+sudo pip3 install -r requirements.txt
 exec ./update.sh
 END_CMSUSER
