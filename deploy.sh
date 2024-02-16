@@ -14,5 +14,5 @@ for ip in ${vms[@]}; do
         su cmsuser;
         cd ~/cms;
         ./update.sh;
-    END_SSH
+END_SSH
 done
