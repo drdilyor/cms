@@ -10,9 +10,6 @@ git push
 
 for ip in ${vms[@]}; do
     echo root@$ip
-    ssh root@$ip <<< '
-        sudo -i -u cmsuser bash <<< "cd ~/cms && git pull && ./update.sh"
-        echo "done ssh"
-        exit
-    '
+    ssh root@$ip -t \
+        'sudo -i -u cmsuser bash <<< "cd ~/cms && git pull && ./update.sh"'
 done
