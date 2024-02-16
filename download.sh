@@ -36,6 +36,5 @@ chmod 700 .netrc
 git clone https://github.com/drdilyor/cms || exit 1
 cd cms
 sudo pip3 install -r requirements.txt || exit 1
-sudo python3 setup.py install || exit 1
 exec ./update.sh
 END_CMSUSER
