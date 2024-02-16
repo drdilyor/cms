@@ -12,6 +12,6 @@ for ip in ${vms[@]}; do
     ssh root@$ip '
         su cmsuser
         cd ~/cms
-        git pull
-        killall -r "^cms[A-Z]"
+        ./update.sh
     '
+done
