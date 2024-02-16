@@ -9,9 +9,10 @@ git commit -m "update"
 git push
 
 for ip in ${vms[@]}; do
+    echo root@$ip
     ssh root@$ip '
-        su cmsuser
-        cd ~/cms
-        ./update.sh
+        su cmsuser;
+        cd ~/cms;
+        ./update.sh;
     '
 done
