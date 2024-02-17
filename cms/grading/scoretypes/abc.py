@@ -414,7 +414,7 @@ class ScoreTypeGroup(ScoreTypeAlone):
                     # leaking info on private testcases.
                     if tc_outcome == "Not correct":
                         previous_tc_none_not_correct = False
-                    if tc_outcome == "Correct":
+                    if tc_outcome != "Correct":
                         previous_tc_all_correct = False
                 else:
                     public_testcases.append({"idx": tc_idx})
