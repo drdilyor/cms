@@ -118,7 +118,6 @@ class ScoreType(metaclass=ABCMeta):
         return (string): an HTML string representing score_details.
 
         """
-        logger.warning(f'{score_details=}')
         _ = translation.gettext
         n_ = translation.ngettext
         if score_details is None:
