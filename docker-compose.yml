@@ -1,0 +1,24 @@
+version: "3.3"
+
+services:
+  cmsdb:
+    container_name: cmsdb
+    image: postgres
+    network_mode: "host"
+    environment:
+      - POSTGRES_PASSWORD=user
+      - POSTGRES_USER=user
+      - POSTGRES_DB=cmsdb
+    volumes:
+      - /var/cmsdb:/var/lib/postgresql/data
+
+  cms:
+    container_name: cms
+    build: .
+    depends_on:
+      - "cmsdb"
+    privileged: true
+    network_mode: "host"
+    volumes:
+      - /home/drdilyor/Downloads/export:/export
+    command: "bash -c 'sleep 1 && cmsDumpImporter /export/dump_day1'"

@@ -35,7 +35,6 @@ COPY --chown=cmsuser:cmsuser requirements.txt dev-requirements.txt /home/cmsuser
 WORKDIR /home/cmsuser/cms
 
 RUN sudo pip3 install -r requirements.txt
-RUN sudo pip3 install -r dev-requirements.txt
 
 COPY --chown=cmsuser:cmsuser . /home/cmsuser/cms
 
