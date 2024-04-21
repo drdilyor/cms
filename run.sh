@@ -1,10 +1,11 @@
 #!/usr/bin/bash
-taskset -c 0 cmsContestWebServer 0 &
-taskset -c 0 cmsAdminWebServer 0 &
+contest=1
+taskset -c 0 cmsContestWebServer 0 -c $contest &
+taskset -c 0 cmsAdminWebServer 0 -c $contest &
 
-taskset -c 0 cmsScoringService 0 &
-taskset -c 0 cmsEvaluationService 0 &
-taskset -c 0 cmsProxyWebServer 0 &
+taskset -c 0 cmsScoringService 0 -c $contest &
+taskset -c 0 cmsEvaluationService 0 -c $contest &
+taskset -c 0 cmsProxyWebServer 0 -c $contest &
 
 taskset -c 1 cmsWorker 0 &
 taskset -c 2 cmsWorker 1 &
