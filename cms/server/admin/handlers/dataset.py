@@ -519,8 +519,8 @@ class AddTestcasesHandler(BaseHandler):
         overwrite = self.get_argument("overwrite", None) is not None
 
         # Get input/output file names templates, or use default ones.
-        input_template = self.get_argument("input_template", "input.*")
-        output_template = self.get_argument("output_template", "output.*")
+        input_template = self.get_argument("input_template", "*.in")
+        output_template = self.get_argument("output_template", "*.out")
         input_re = re.compile(re.escape(input_template).replace("\\*",
                               "(.*)") + "$")
         output_re = re.compile(re.escape(output_template).replace("\\*",
@@ -593,8 +593,8 @@ class DownloadTestcasesHandler(BaseHandler):
         # Get zip file name, input/output file names templates,
         # or use default ones.
         zip_filename = self.get_argument("zip_filename", "testcases.zip")
-        input_template = self.get_argument("input_template", "input.*")
-        output_template = self.get_argument("output_template", "output.*")
+        input_template = self.get_argument("input_template", "*.in")
+        output_template = self.get_argument("output_template", "*.out")
 
         # Template validations
         if input_template.count('*') != 1 or output_template.count('*') != 1:
