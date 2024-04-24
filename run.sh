@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-contest=1
+contest=3
 taskset -c 0 cmsContestWebServer 0 -c $contest &
 taskset -c 0 cmsAdminWebServer 0 -c $contest &
 
