@@ -12,4 +12,6 @@ taskset -c 2 cmsWorker 1 &
 taskset -c 3 cmsWorker 2 &
 
 taskset -c 0 cmsLogService 0 &
-taskset -c 0 cmsResourceService 0
+taskset -c 0 cmsResourceService 0 &
+
+taskset -c 0 cmsRankingWebServer
