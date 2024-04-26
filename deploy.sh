@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 vms=(
      139.59.205.178
+     209.38.186.131
 )
 
 git add .
