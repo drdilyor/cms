@@ -1,7 +1,7 @@
 #!/usr/bin/bash
 export TZ=Asia/Tashkent
 
-contest=3
+contest=4
 taskset -c 0 cmsContestWebServer 0 -c $contest &
 taskset -c 0 cmsAdminWebServer 0 -c $contest &
 
