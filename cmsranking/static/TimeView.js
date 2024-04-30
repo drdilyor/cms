@@ -92,9 +92,9 @@ var TimeView = new function () {
         }
 
         if (c == null) {
-            $("#TimeView_name").text();
+            $("#TimeView_name_inner").text();
         } else {
-            $("#TimeView_name").text(c["name"]);
+            $("#TimeView_name_inner").text(c["name"]);
         }
 
         var date = new Date(cur_time * 1000);
