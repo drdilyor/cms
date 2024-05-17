@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 apt-get update || exit 1
 apt-get install -y \
     build-essential \
@@ -28,8 +29,8 @@ cd ~
 
 cat << END > .netrc
 machine github.com
-login drdilyor
-password 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
+login GITHUB_USERNAME
+password GITHUB_TOKEN
 END
 chmod 700 .netrc
 

@@ -20,5 +20,5 @@ services:
     privileged: true
     network_mode: "host"
     volumes:
-      - /home/drdilyor/Downloads/export:/export
-    command: "bash -c 'sleep 1 && cmsDumpImporter /export/dump_day1'"
+      - /sys/fs/cgroup:/sys/fs/cgroup
+    command: "./run.sh"
