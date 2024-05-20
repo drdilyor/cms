@@ -3,6 +3,8 @@ Contest Management System
 
 Homepage: <http://cms-dev.github.io/>
 
+When cloning the repo pass the `--recursive` argument to `git clone`.
+
 - `Dockerfile` - to easily build a docker image, based on ubuntu 20.04
 - `run.sh` - startup script
 - `download.sh` - to install cms for the first time, if you are not using docker image. Run it without cloning the repo first
